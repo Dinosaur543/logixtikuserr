@@ -16,7 +16,7 @@ const RouteMap = (props) => {
     longitude: 99.8604895,
   };
 
-  const originLoc = {
+  /* const originLoc = {
     latitude: origin.details.geometry.location.lat,
     longitude: origin.details.geometry.location.lng,
   };
@@ -24,7 +24,7 @@ const RouteMap = (props) => {
   const destinationLoc = {
     latitude: destination.details.geometry.location.lat,
     longitude: destination.details.geometry.location.lng,
-  };
+  }; */
 
   return (
     <MapView
@@ -48,10 +48,12 @@ const RouteMap = (props) => {
         coordinate={origin}
         title={'Origin'}
       />
+
       <Marker
         coordinate={destination}
         title={"Destination"}
       />
+
     </MapView>
   );
 };

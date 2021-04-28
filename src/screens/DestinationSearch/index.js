@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, TextInput, SafeAreaView} from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import { useNavigation } from '@react-navigation/native';
 
 import PlaceRow from "./PlaceRow";
 import styles from './styles.js';
@@ -30,15 +31,15 @@ const DestinationSearch = (props) => {
     }
   }
 
-  useEffect(() =>  /* {
-    checkNavigation();
-  }, [originPlace, destinationPlace]); */
-  {
-    console.warn('useEffect is called');
+  /* useEffect(() => {
+   console.warn('useEffect is called');
     if (originPlace && destinationPlace) {
-      console.warn("hey!!!!!!")
       console.warn('Redirect to results');
     }
+  }, [originPlace, destinationPlace]); */
+
+  useEffect(() => {
+    checkNavigation();
   }, [originPlace, destinationPlace]);
 
   return (

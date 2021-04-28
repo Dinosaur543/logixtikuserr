@@ -13,6 +13,7 @@
  //import { withAuthenticator } from 'aws-amplify-react-native'
  
 import Router from './src/navigation/Root';
+import DestinationSearch from './src/screens/DestinationSearch';
  
  navigator.geolocation = require('@react-native-community/geolocation');
  
