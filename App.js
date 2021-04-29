@@ -10,13 +10,15 @@
  import React, {useEffect} from 'react';
  import {StatusBar, PermissionsAndroid, Platform} from 'react-native';
  import Geolocation from '@react-native-community/geolocation';
- //import { withAuthenticator } from 'aws-amplify-react-native'
+ import { withAuthenticator } from 'aws-amplify-react-native'
  
 import Router from './src/navigation/Root';
-import DestinationSearch from './src/screens/DestinationSearch';
  
  navigator.geolocation = require('@react-native-community/geolocation');
  
+ import Amplify from 'aws-amplify'
+ import config from './aws-exports'
+ Amplify.configure(config)
 
  const App: () => React$Node = () => {
   
@@ -61,5 +63,5 @@ import DestinationSearch from './src/screens/DestinationSearch';
    );
  };
  
- export default App;
+ export default withAuthenticator(App);
  
